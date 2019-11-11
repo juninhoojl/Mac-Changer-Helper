@@ -1,0 +1,32 @@
+For instance, using the Terminal, first save your original MAC address:
+
+ORIGINALMAC=`ifconfig en0 | grep ether | awk '{print $2}'`
+echo " MAC address: ${ORIGINALMAC}"
+
+Then use openssl to generate a new random MAC address:
+
+RANDOMMAC=`openssl rand -hex 6 | sed 's/\(..\)/\1:/g; s/.$//'`
+echo " Random MAC address: ${RANDOMMAC}"
+
+Then reset your ethernet en0 MAC address to the random one:
+
+sudo ifconfig en0 ether `echo ${RANDOMMAC}`
+sudo ifconfig en0 down
+sudo ifconfig en0 up
+
+Then check that the MAC address has changed:
+
+ifconfig en0
+
+Then reset the MAC address back to the original one:
+
+sudo ifconfig en0 ether `echo ${ORIGINALMAC}`
+sudo ifconfig en0 down
+sudo ifconfig en0 up
+
+And check that the MAC address is back to the original:
+
+ifconfig en0
+
+
+sudo ifconfig en0 ether 24:ca:59:e2:81:26

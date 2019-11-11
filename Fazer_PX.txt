@@ -1,0 +1,18 @@
+-> Linux (GRA)
++
+-> Mininet (framework que controla openV switch)
++
+-> Docker => Opendaylight
+				-> Hydrogen and Helium
+
+(Goal: Emaulate SDN/Openflow enviroments)
+
+
+
+Linux 
+
+Kernel OpenUSwitch (DVS)
+
+-> Network functionalities
++
+open flow (SDN)
