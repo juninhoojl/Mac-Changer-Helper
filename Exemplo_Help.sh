@@ -5,6 +5,7 @@ where:
     -s  set the seed value (default: 42)"
 
 seed=42
+
 while getopts ':hs:' option; do
   case "$option" in
     h) echo "$usage"

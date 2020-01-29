@@ -43,7 +43,7 @@ listint () {
 		done
 }
 
-listint 1
+listint
 
 # Valida interface
 # $1 = Interface -> 1 (valid) | 0 (not valid)
@@ -54,12 +54,5 @@ validint () {
 		echo 0
 	fi
 }
-
-
-
-# Testes
-validint "en0"
-
-
 
 
