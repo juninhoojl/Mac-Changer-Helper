@@ -3,6 +3,7 @@
 #networksetup -listallhardwareports
 
 #Colors output
+
 #declare -A cl=( ["nc"]='\033[0m' ["red"]='\033[0;31m' ["green"]='\033[0;32m' ["purple"]='\033[0;35m')
 nc='\033[0m'
 red='\033[0;31m'
@@ -30,7 +31,6 @@ listint () {
 	Inte=(`networksetup -listallhardwareports | grep 'Device' | awk '{print $2}'`)
 	# get length of an array
 	tLen=${#Desc[@]}
-	# use for loop read all nameservers
 
 		for (( i=0; i<${tLen}; i++ ));
 		do
@@ -42,6 +42,9 @@ listint () {
 			fi
 		done
 }
+
+
+
 
 listint
 

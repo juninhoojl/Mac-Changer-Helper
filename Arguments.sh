@@ -18,13 +18,8 @@ set -o pipefail         # Use last non-zero exit code in a pipeline
 # ARGS: None
 # OUTS: None
 function script_usage() {
-    cat << EOF
-Usage:
-     -h|--help                  Displays this help
-     -v|--verbose               Displays verbose output
-    -nc|--no-colour             Disables colour output
-    -cr|--cron                  Run silently unless we encounter an error
-EOF
+
+    cat uso.txt
 }
 
 
@@ -38,6 +33,7 @@ function parse_params() {
         shift
         case $param in
             -h|--help)
+                echo "Teste"
                 script_usage
                 exit 0
                 ;;
@@ -59,3 +55,6 @@ function parse_params() {
 parse_params
 
 # vim: syntax=sh cc=80 tw=79 ts=4 sw=4 sts=4 et sr
+
+
+
